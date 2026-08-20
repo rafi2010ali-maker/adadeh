@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri Foto</title>
+
+    <link rel="stylesheet" href="foto.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <!-- HEADER -->
+    <header class="hero">
+
+        <div class="hero-icon">♡</div>
+
+        <h1>Galeri Foto</h1>
+
+        <p>Koleksi momen indah yang tersimpan di sini</p>
+
+    </header>
+
+
+    <main class="media-page">
+
+        <!-- BAGIAN ATAS -->
+        <div class="page-top">
+
+            <button class="back-button" onclick="goBack()">
+                ← Kembali
+            </button>
+
+            <button class="add-button" onclick="openPassword('photo')">
+                ＋ Tambah Foto
+            </button>
+
+        </div>
+
+
+        <!-- GALERI -->
+        <div class="photo-gallery" id="photoGallery">
+
+            <div class="photo-card">
+
+                <div class="image-box">
+                    <img
+                        src="IMG_20251016_063933.jpg"
+                        alt="Foto Saya"
+                        onclick="openImage(this.src)">
+                </div>
+
+                <div class="photo-info">
+                    <h3>Foto Saya</h3>
+                    <button class="delete-button" onclick="deletePhoto(this)">
+                        Hapus
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <div class="image-box">
+                    <img
+                        src="IMG-20251022-WA0056.jpg"
+                        alt="Foto Kedua"
+                        onclick="openImage(this.src)">
+                </div>
+
+                <div class="photo-info">
+                    <h3>Foto Kedua</h3>
+                    <button class="delete-button" onclick="deletePhoto(this)">
+                        Hapus
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <div class="image-box">
+                    <img
+                        src="IMG_0022_20260414_094707.jpg"
+                        alt="Foto Ketiga"
+                        onclick="openImage(this.src)">
+                </div>
+
+                <div class="photo-info">
+                    <h3>Foto Ketiga</h3>
+                    <button class="delete-button" onclick="deletePhoto(this)">
+                        Hapus
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- PASSWORD MODAL -->
+    <div class="modal" id="passwordModal">
+
+        <div class="password-box">
+
+            <button class="close-modal" onclick="closePassword()">
+                ×
+            </button>
+
+            <div class="lock-icon">🔐</div>
+
+            <h2>Akses Terbatas</h2>
+
+            <p>
+                Masukkan sandi untuk menambahkan foto.
+            </p>
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Masukkan sandi"
+                autocomplete="off">
+
+            <button class="confirm-button" onclick="checkPassword()">
+                Masuk
+            </button>
+
+            <p class="error-message" id="errorMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FILE INPUT -->
+    <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        multiple
+        hidden>
+
+
+    <!-- FULL IMAGE MODAL -->
+    <div class="image-modal" id="imageModal" onclick="closeImage()">
+
+        <button class="image-close" onclick="closeImage()">
+            ×
+        </button>
+
+        <img id="fullImage" src="" alt="Full Image">
+
+    </div>
+
+
+    <!-- SCRIPT -->
+    <script src="foto&video.js"></script>
+
+</body>
+
+</html>

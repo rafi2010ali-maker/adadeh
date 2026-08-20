@@ -1,0 +1,263 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri Video</title>
+
+    <link
+        rel="stylesheet"
+        href="video.css">
+
+</head>
+
+
+<body>
+
+    <div class="background"></div>
+
+
+    <!-- HEADER -->
+
+    <header class="hero">
+
+        <div class="hero-icon">
+            ▶
+        </div>
+
+        <h1>Galeri Video</h1>
+
+        <p>
+            Koleksi video dan momen indah
+        </p>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="media-page">
+
+
+        <!-- TOP -->
+
+        <div class="page-top">
+
+            <button
+                class="back-button"
+                onclick="goBack()">
+
+                ← Kembali
+
+            </button>
+
+
+            <button class="add-button" onclick="openPassword('video')">
+                 ＋ Tambah Video
+            </button>
+
+        </div>
+
+
+        <!-- VIDEO GALLERY -->
+
+        <div
+            class="video-gallery"
+            id="videoGallery">
+
+
+            <!-- VIDEO 1 -->
+
+            <div class="video-card">
+
+                <div class="video-box">
+
+                    <video
+                        src="VID-20250801-WA0002.mp4"
+                        controls
+                        preload="metadata"
+                        onclick="openVideo(this.src)">
+
+                    </video>
+
+                </div>
+
+
+                <div class="video-info">
+
+                    <h3>
+                        Video Pertama
+                    </h3>
+
+
+                    <button
+                        class="delete-button"
+                        onclick="deleteVideo(this)">
+
+                        Hapus
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO 2 -->
+
+            <div class="video-card">
+
+                <div class="video-box">
+
+                    <video
+                        src="VID-20250801-WA0002.mp4"
+                        controls
+                        preload="metadata"
+                        onclick="openVideo(this.src)">
+
+                    </video>
+
+                </div>
+
+
+                <div class="video-info">
+
+                    <h3>
+                        Video Kedua
+                    </h3>
+
+
+                    <button
+                        class="delete-button"
+                        onclick="deleteVideo(this)">
+
+                        Hapus
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- PASSWORD MODAL -->
+
+    <div
+        class="modal"
+        id="passwordModal">
+
+
+        <div class="password-box">
+
+
+            <button
+                class="close-modal"
+                onclick="closePassword()">
+
+                ×
+
+            </button>
+
+
+            <div class="lock-icon">
+                🔐
+            </div>
+
+
+            <h2>
+                Akses Terbatas
+            </h2>
+
+
+            <p>
+                Masukkan sandi untuk
+                menambahkan video.
+            </p>
+
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Masukkan sandi"
+                autocomplete="off">
+
+
+            <button
+                class="confirm-button"
+                onclick="checkPassword()">
+
+                Masuk
+
+            </button>
+
+
+            <p
+                class="error-message"
+                id="errorMessage">
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FILE INPUT -->
+
+    <input
+        type="file"
+        id="videoInput"
+        accept="video/*"
+        multiple
+        hidden>
+
+
+
+    <!-- FULL VIDEO -->
+
+    <div
+        class="video-modal"
+        id="videoModal"
+        onclick="closeVideo()">
+
+
+        <button
+            class="video-close"
+            onclick="closeVideo()">
+
+            ×
+
+        </button>
+
+
+        <video
+            id="fullVideo"
+            controls
+            autoplay>
+
+        </video>
+
+    </div>
+
+
+
+    <script src="foto&video.js"></script>
+
+</body>
+
+</html>
+```

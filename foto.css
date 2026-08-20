@@ -1,0 +1,1068 @@
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    color: #3d2932;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 202, 220, .75),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(211, 195, 255, .65),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #fdf6fa
+        );
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(255, 137, 174, .16),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(167, 137, 225, .15),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 210, 225, .2),
+            transparent 30%
+        );
+
+    animation: backgroundMove 12s ease-in-out infinite alternate;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.hero {
+    text-align: center;
+
+    padding: 65px 20px 40px;
+}
+
+.hero-icon {
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d96891,
+            #9873d1
+        );
+
+    box-shadow:
+        0 12px 35px rgba(155, 80, 125, .28);
+
+    animation: heartFloat 3s ease-in-out infinite;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 6vw, 55px);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a64d72,
+            #7a58a8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 12px;
+
+    color: #806d76;
+
+    font-size: 16px;
+
+    letter-spacing: .3px;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.media-page {
+    width: min(1150px, 92%);
+
+    margin: 0 auto;
+
+    padding-bottom: 70px;
+}
+
+
+/* =====================================================
+   TOP BUTTON
+===================================================== */
+
+.page-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.back-button,
+.add-button {
+    min-height: 46px;
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 12px 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+/* BACK BUTTON */
+
+.back-button {
+    color: #684c59;
+
+    background:
+        rgba(255, 255, 255, .78);
+
+    border:
+        1px solid rgba(180, 130, 150, .2);
+
+    box-shadow:
+        0 7px 20px rgba(100, 60, 90, .06);
+
+    backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+    transform: translateX(-4px);
+
+    background: white;
+
+    box-shadow:
+        0 10px 25px rgba(100, 60, 90, .1);
+}
+
+
+/* ADD BUTTON */
+
+.add-button {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c95f87,
+            #9069c3
+        );
+
+    box-shadow:
+        0 9px 25px rgba(145, 80, 130, .25);
+}
+
+.add-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(145, 80, 130, .35);
+}
+
+.add-button:active,
+.back-button:active {
+    transform: scale(.97);
+}
+
+
+/* =====================================================
+   PHOTO GALLERY
+===================================================== */
+
+.photo-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(230px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   PHOTO CARD
+===================================================== */
+
+.photo-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, .72);
+
+    border:
+        1px solid rgba(255, 255, 255, .85);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(100, 60, 90, .09);
+
+    backdrop-filter: blur(14px);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    animation:
+        cardAppear .6s ease both;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(100, 60, 90, .17);
+}
+
+
+/* =====================================================
+   PHOTO FRAME 1:1
+===================================================== */
+
+.image-box {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1e4ea,
+            #eee8f7
+        );
+
+    cursor: zoom-in;
+}
+
+
+/* Efek cahaya */
+
+.image-box::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, .18),
+            transparent 45%,
+            rgba(100, 50, 100, .08)
+        );
+
+    opacity: 0;
+
+    transition: opacity .4s ease;
+}
+
+.photo-card:hover .image-box::after {
+    opacity: 1;
+}
+
+
+/* IMAGE */
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s cubic-bezier(.2, .8, .2, 1);
+}
+
+.image-box:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   PHOTO INFO
+===================================================== */
+
+.photo-info {
+    min-height: 65px;
+
+    padding: 14px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.photo-info h3 {
+    min-width: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #4b3340;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.delete-button {
+    flex-shrink: 0;
+
+    border: none;
+
+    padding: 7px 11px;
+
+    border-radius: 9px;
+
+    color: #a24d67;
+
+    background:
+        #fff0f4;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.delete-button:hover {
+    color: white;
+
+    background:
+        #c95f7d;
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   GENERAL MODAL
+===================================================== */
+
+.modal,
+.image-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(25, 15, 25, .70);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+
+    z-index: 1000;
+}
+
+.modal.active,
+.image-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+   PASSWORD BOX
+===================================================== */
+
+.password-box {
+    position: relative;
+
+    width: min(400px, 100%);
+
+    padding: 38px 32px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, .96);
+
+    border:
+        1px solid rgba(255, 255, 255, .9);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, .28);
+
+    transform:
+        translateY(25px)
+        scale(.96);
+
+    transition:
+        transform .3s ease;
+}
+
+.modal.active .password-box {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* LOCK */
+
+.lock-icon {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe0ea,
+            #eee3ff
+        );
+}
+
+
+/* PASSWORD TITLE */
+
+.password-box h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 28px;
+
+    color: #4b3340;
+}
+
+.password-box p {
+    margin:
+        9px 0 20px;
+
+    color: #806d76;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PASSWORD INPUT
+===================================================== */
+
+.password-box input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border:
+        1px solid #ead5df;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    color: #49333d;
+
+    font-size: 15px;
+
+    background:
+        #fff9fb;
+
+    transition:
+        border .2s ease,
+        box-shadow .2s ease;
+}
+
+.password-box input::placeholder {
+    color: #b39ca6;
+}
+
+.password-box input:focus {
+    border-color:
+        #b65f83;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(182, 95, 131, .10);
+}
+
+
+/* =====================================================
+   CONFIRM BUTTON
+===================================================== */
+
+.confirm-button {
+    width: 100%;
+
+    margin-top: 13px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c95f87,
+            #8e69c2
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(145, 80, 130, .22);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.confirm-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(145, 80, 130, .30);
+}
+
+.confirm-button:active {
+    transform: scale(.98);
+}
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+.close-modal,
+.image-close {
+    position: absolute;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.close-modal {
+    top: 12px;
+
+    right: 17px;
+
+    color: #886f79;
+
+    font-size: 30px;
+
+    transition:
+        transform .2s ease,
+        color .2s ease;
+}
+
+.close-modal:hover {
+    color: #c95f7d;
+
+    transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-message {
+    min-height: 20px;
+
+    margin-top: 10px !important;
+
+    color:
+        #d34f6d !important;
+
+    font-size:
+        13px !important;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   FULL IMAGE MODAL
+===================================================== */
+
+.image-modal {
+    padding: 25px;
+}
+
+.image-modal img {
+    max-width: 94vw;
+
+    max-height: 88vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, .55);
+
+    animation:
+        imageOpen .3s ease;
+}
+
+
+/* CLOSE FULL IMAGE */
+
+.image-close {
+    top: 18px;
+
+    right: 25px;
+
+    color: white;
+
+    font-size: 44px;
+
+    line-height: 1;
+
+    z-index: 2;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.image-close:hover {
+    transform:
+        rotate(90deg)
+        scale(1.1);
+
+    opacity: .75;
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes imageOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.88);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+@keyframes backgroundMove {
+
+    from {
+        transform:
+            scale(1);
+    }
+
+    to {
+        transform:
+            scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .photo-gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding:
+            35px 15px 30px;
+    }
+
+    .hero-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 31px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    .media-page {
+        width: 94%;
+    }
+
+
+    /* BUTTON */
+
+    .page-top {
+        align-items: stretch;
+
+        margin-bottom: 20px;
+    }
+
+    .back-button,
+    .add-button {
+        flex: 1;
+
+        min-height: 44px;
+
+        padding:
+            11px 8px;
+
+        font-size: 13px;
+    }
+
+
+    /* GALLERY */
+
+    .photo-gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    /* CARD */
+
+    .photo-card {
+        border-radius: 16px;
+    }
+
+
+    /* INFO */
+
+    .photo-info {
+        display: block;
+
+        padding: 10px;
+    }
+
+    .photo-info h3 {
+        margin-bottom: 8px;
+
+        font-size: 14px;
+    }
+
+
+    /* DELETE */
+
+    .delete-button {
+        width: 100%;
+
+        padding: 8px;
+    }
+
+
+    /* PASSWORD */
+
+    .password-box {
+        padding:
+            30px 22px;
+
+        border-radius: 21px;
+    }
+
+
+    /* FULL IMAGE */
+
+    .image-modal {
+        padding: 15px;
+    }
+
+    .image-modal img {
+        max-width: 96vw;
+
+        max-height: 85vh;
+
+        border-radius: 8px;
+    }
+
+    .image-close {
+        top: 12px;
+
+        right: 17px;
+
+        font-size: 38px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .photo-gallery {
+        gap: 9px;
+    }
+
+    .back-button,
+    .add-button {
+        font-size: 12px;
+    }
+
+    .photo-info h3 {
+        font-size: 13px;
+    }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+button:focus-visible,
+input:focus-visible {
+    outline:
+        3px solid rgba(183, 91, 133, .3);
+
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: .01ms !important;
+    }
+}
